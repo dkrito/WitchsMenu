@@ -645,6 +645,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -658,10 +659,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: a51430e4-311c-4e54-afae-3e45d1b01d69
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: FunTeamGameJam
+  organizationId: dkrito
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
