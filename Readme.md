@@ -2,6 +2,7 @@ Unnamed! (Hanzel and Gretel spinoff)
 Created for Unity Game Jam 2020
 
 Creators: Denisse, Jessie and Satpreet.
+
 Theme: Secrets
 
 Story: You have been captured by the hungry witch. She has left you trapped in her kitchen, while she is off gathering ingredients for today's menu: YOU!
