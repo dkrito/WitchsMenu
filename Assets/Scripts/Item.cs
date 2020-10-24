@@ -16,15 +16,13 @@ public enum ItemName
     WitchHair,
     SleepPotion,
     EnlargePotion,
-    CrowTear
+    CrowTear,
+    Key,
+    Spider
 }
 
 public class Item : MonoBehaviour
 {
     [SerializeField] protected ItemName itemName;
 
-    public ItemName GetItemName()
-    {
-        return itemName;
-    }
 }
