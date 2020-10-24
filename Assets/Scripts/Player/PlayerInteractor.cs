@@ -6,15 +6,26 @@ public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private Camera cam;
     [SerializeField] private float maxRayDistance;
+
+    private bool playerCanInteract;
+
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+        playerCanInteract = true;
+         
+    }
+
+    private void OnEnable()
+    {
+        InteractionBroker.CameraMovementHandle += ToggleInteract;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (playerCanInteract == false) return;
         if (cam)
         {
             if (Input.GetMouseButtonDown(0))
@@ -24,6 +35,8 @@ public class PlayerInteractor : MonoBehaviour
 
                 Debug.DrawRay(cam.transform.position, Vector3.forward, Color.red, 10);
 
+
+                //If the ray hits an object, check if its interactable or collectible
                 if(Physics.Raycast(ray, out hit, maxRayDistance))
                 {
                     IInteractable i;
@@ -44,5 +57,17 @@ public class PlayerInteractor : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        InteractionBroker.CameraMovementHandle -= ToggleInteract;
+    }
+
+    public void ToggleInteract(bool state)
+    {
+        print("Can interact: " + playerCanInteract);
+        playerCanInteract = !playerCanInteract;
+
     }
 }

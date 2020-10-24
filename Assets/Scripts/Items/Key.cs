@@ -9,6 +9,7 @@ public class Key : Item, ICollectible
     public void Collect()
     {
         GameManager.Instance.AddToInventory(this);
+        gameObject.SetActive(false);
     }
 
     public ItemName GetItemName()

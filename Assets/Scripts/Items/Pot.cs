@@ -2,17 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pot : Item, IInteractable
+public class Pot : Item, IInteractable, IPannable
 {
-    
-    [SerializeField] List<Recipe> recipes;
-
+    [SerializeField] private Transform targetLocation;
+    [SerializeField] private List<Recipe> recipes;
 
 
 
     public void Interact()
     {
-        CheckIngredients();
+        if (targetLocation)
+        {
+            PanCameraTo(targetLocation.position);
+        }
+        
+    }
+
+    public void PanCameraTo(Vector3 targetLocation)
+    {
+        InteractionBroker.NotifyPanListeners(targetLocation, transform.position);
     }
 
 

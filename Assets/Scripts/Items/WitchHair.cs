@@ -7,6 +7,7 @@ public class WitchHair : Item, ICollectible
     public void Collect()
     {
         GameManager.Instance.AddToInventory(this);
+        gameObject.SetActive(false);
     }
 
     public ItemName GetItemName()
