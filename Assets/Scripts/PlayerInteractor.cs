@@ -31,6 +31,15 @@ public class PlayerInteractor : MonoBehaviour
                     {
                         i.Interact();
                     }
+                    else
+                    {
+                        ICollectible c;
+
+                        if(hit.transform.TryGetComponent<ICollectible>(out c))
+                        {
+                            c.Collect();
+                        }
+                    }
 
                 }
             }
