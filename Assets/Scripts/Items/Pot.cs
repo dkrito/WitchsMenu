@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pot : Item, IInteractable, IPannable
+public class Pot : Item, IInteractable
 {
     [SerializeField] private Transform targetLocation;
     [SerializeField] private List<Recipe> recipes;
@@ -11,32 +11,29 @@ public class Pot : Item, IInteractable, IPannable
 
     public void Interact()
     {
-        if (targetLocation)
-        {
-            PanCameraTo(targetLocation.position);
-        }
+        print("Interacting with pot");
         
     }
 
-    public void PanCameraTo(Vector3 targetLocation)
-    {
-        InteractionBroker.NotifyPanListeners(targetLocation, transform.position);
-    }
+    //public void PanCameraTo(Vector3 targetLocation)
+    //{
+    //    InteractionBroker.NotifyPanListeners(targetLocation, transform.position);
+    //}
 
 
-    void CheckIngredients()
-    {
-        foreach(Recipe rec in recipes)
-        {
-            if (rec.HaveAllIngredients(GameManager.Instance.GetInventory()))
-            {
-                print("Success! Have all ingredients");
-                return;
-            }
-            else
-            {
-                print("Failed recipe");
-            }
-        }
-    }
+    //void CheckIngredients()
+    //{
+    //    foreach(Recipe rec in recipes)
+    //    {
+    //        if (rec.HaveAllIngredients(GameManager.Instance.GetInventory()))
+    //        {
+    //            print("Success! Have all ingredients");
+    //            return;
+    //        }
+    //        else
+    //        {
+    //            print("Failed recipe");
+    //        }
+    //    }
+    //}
 }

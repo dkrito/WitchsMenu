@@ -25,14 +25,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canRotateCamera == false) return;
 
-        float h = Input.GetAxis("Horizontal") * Time.deltaTime * movementSpeed;
-        float v = Input.GetAxis("Vertical") * Time.deltaTime * movementSpeed;
-
-
-        
-
-        transform.Translate(h, 0, v);
-
         currentRotationValueX = Input.GetAxis("Mouse X") * Time.deltaTime * turnSpeed * 270;
         accumulatedRotationValue += currentRotationValueX;
 
@@ -49,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
             currentRotationValueX = 0;
         }
 
-        transform.eulerAngles = new Vector3(0, 180 + accumulatedRotationValue, 0);
+        transform.eulerAngles = new Vector3(0, accumulatedRotationValue, 0);
+
 
         //transform.Rotate(0, currentRotationValueX, 0, Space.Self);
     }
