@@ -49,7 +49,9 @@ public class PlayerMovement : MonoBehaviour
             currentRotationValueX = 0;
         }
 
-        transform.Rotate(0, currentRotationValueX, 0, Space.Self);
+        transform.eulerAngles = new Vector3(0, 180 + accumulatedRotationValue, 0);
+
+        //transform.Rotate(0, currentRotationValueX, 0, Space.Self);
     }
 
     private void OnDisable()
