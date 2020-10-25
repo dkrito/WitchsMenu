@@ -25,8 +25,6 @@ public class Item : MonoBehaviour
 {
     [SerializeField] protected ItemName itemName;
     
-    public int ID;
-    public string description;
     public Texture2D icon;
 
     public bool pickedUp;

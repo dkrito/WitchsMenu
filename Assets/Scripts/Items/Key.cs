@@ -8,7 +8,7 @@ public class Key : Item, ICollectible
 
     public void Collect()
     {
-        GameManager.Instance.AddToInventory(this);
+        //GameManager.Instance.AddToInventory(this);
         gameObject.SetActive(false);
     }
 

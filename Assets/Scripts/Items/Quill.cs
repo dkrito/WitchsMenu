@@ -8,7 +8,7 @@ public class Quill : Item, ICollectible
     {
         print("collectign");
         gameObject.SetActive(false);
-        GameManager.Instance.AddToInventory(this);
+        //GameManager.Instance.AddToInventory(this);
     }
 
     public ItemName GetItemName()

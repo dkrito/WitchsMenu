@@ -5,8 +5,6 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     public GameObject item; 
-    public int ID;
-    public string description; 
     public bool empty;
     public Texture2D icon;
 }

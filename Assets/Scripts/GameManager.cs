@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         }
 
         isGameActive = true;
-        gameOverText = GameObject.Find("Success").GetComponent<Text>();
+//        gameOverText = GameObject.Find("Success").GetComponent<Text>();
         slots = new GameObject[allSlots];
         
         for(int i = 0; i < allSlots; i++)
@@ -45,34 +45,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.I))
-        {
-            inventoryEnabled = !inventoryEnabled;
-        }
-
-        if(inventoryEnabled == true)
-        {
-            inventoryHolder.gameObject.SetActive(true);
-        }
-        else
-        {
-            inventoryHolder.gameObject.SetActive(false);
-        }
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Item")
-        {
-            GameObject itemPickedUp = other.gameObject;
-            Item item = itemPickedUp.GetComponent<Item>();
-
-            AddToInventory(itemPickedUp, item.ID, item.description, item.icon);
-        }
-    }
-
     public void AddToInventory(GameObject itemObj, int itemID, string itemDescription, Texture2D itemIcon)
     {
         for (int i = 0; i < allSlots; i++)
@@ -83,8 +55,6 @@ public class GameManager : MonoBehaviour
 
                 slots[i].GetComponent<Slot>().item = itemObj;
                 slots[i].GetComponent<Slot>().icon = itemIcon;
-                slots[i].GetComponent<Slot>().ID = itemID;
-                slots[i].GetComponent<Slot>().description = itemDescription;
 
                 itemObj.transform.parent = slots[i].transform;
                 itemObj.SetActive(false);
