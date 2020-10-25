@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public bool isGameActive;
+    public Text gameOverText;
 
     [SerializeField] private List<ICollectible> playerInventory;
 
@@ -20,6 +23,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        
+        isGameActive = true;
+        gameOverText = GameObject.Find("Success").GetComponent<Text>();
 
         DontDestroyOnLoad(gameObject);
         if(playerInventory == null) playerInventory = new List<ICollectible>();
@@ -49,5 +55,11 @@ public class GameManager : MonoBehaviour
         }
 
         print("Done printing inventory");
+    }
+
+    public void GameOver()
+    {
+        isGameActive = false;
+        gameOverText.GetComponent<Text>().enabled = true;
     }
 }
