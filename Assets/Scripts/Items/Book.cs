@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hat : Item, IInteractable, IPannable
+public class Book : Item, IInteractable, IPannable
 {
     [SerializeField] private Transform targetLocation;
 
