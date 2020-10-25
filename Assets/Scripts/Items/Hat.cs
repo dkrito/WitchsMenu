@@ -2,24 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hat : Item, IInteractable, IPannable
+public class Hat : Item
 {
     [SerializeField] private Transform targetLocation;
-
-
-    public void Interact()
-    {
-        if (targetLocation)
-        {
-            PanCameraTo(targetLocation.position);
-        }
-
-    }
-
-    public void PanCameraTo(Vector3 targetLocation)
-    {
-        InteractionBroker.NotifyPanListeners(targetLocation, transform.position);
-    }
 
 
 }

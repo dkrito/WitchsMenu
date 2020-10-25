@@ -23,7 +23,7 @@ public class CameraPanner : MonoBehaviour, IPannable, IInteractable
         print(this.enabled);
         InteractionBroker.NotifyPanListeners(targetLocation, transform.position);
         InteractionBroker.TogglePanningCameras(false);
-        
+        AudioManager.Instance.PlayOneShot(SoundName.Swoosh);
     }
 
     public void TogglePanner(bool state)
