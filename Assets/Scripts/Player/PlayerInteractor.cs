@@ -25,7 +25,6 @@ public class PlayerInteractor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerCanInteract == false) return;
         if (cam)
         {
             if (Input.GetMouseButtonDown(0))

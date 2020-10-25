@@ -9,11 +9,21 @@ public static class InteractionBroker
 
     public static Action<bool> CameraMovementHandle;
 
+    public static Action<bool> TogglePannerHandle;
+
     public static void NotifyPanListeners(Vector3 location, Vector3 targetToLookAt)
     {
         if (PanHandle != null)
         {
             PanHandle(location, targetToLookAt);
+        }
+    }
+
+    public static void TogglePanningCameras(bool state)
+    {
+        if(TogglePannerHandle != null)
+        {
+            TogglePannerHandle(state);
         }
     }
 

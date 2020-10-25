@@ -58,6 +58,8 @@ public class CameraTurner : MonoBehaviour
         canMoveCamera = true;
         //Cursor.lockState = CursorLockMode.Confined;
         //Cursor.visible = false;
+
+        InteractionBroker.TogglePannerHandle(true);
         print("returning");
     }
 

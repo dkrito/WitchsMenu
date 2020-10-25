@@ -2,24 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skull : Item, IInteractable, IPannable
+public class Skull : Item, ICollectible
 {
-    [SerializeField] private Transform targetLocation;
-
-
-    public void Interact()
+    public void Collect()
     {
-        if (targetLocation)
-        {
-            PanCameraTo(targetLocation.position);
-        }
-
+        print("collectign");
+        gameObject.SetActive(false);
+        GameManager.Instance.AddToInventory(this);
     }
 
-    public void PanCameraTo(Vector3 targetLocation)
+    public ItemName GetItemName()
     {
-        InteractionBroker.NotifyPanListeners(targetLocation, transform.position);
+        return itemName;
     }
-
-
 }
