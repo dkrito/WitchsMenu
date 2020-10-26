@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject inventoryHolder;
     private bool inventoryEnabled;
     private int allSlots = 6;
-    private GameObject[] slots;
+    [SerializeField] private GameObject[] slots;
 
     [SerializeField] private List<ICollectible> playerInventory;
 
@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 
         isGameActive = true;
 //        gameOverText = GameObject.Find("Success").GetComponent<Text>();
-        slots = new GameObject[allSlots];
         
         for(int i = 0; i < allSlots; i++)
         {
@@ -45,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void AddToInventory(GameObject itemObj, int itemID, string itemDescription, Texture2D itemIcon)
+    public void AddToInventory(GameObject itemObj, Sprite itemIcon, Texture2D tex)
     {
         for (int i = 0; i < allSlots; i++)
         {
@@ -53,13 +52,15 @@ public class GameManager : MonoBehaviour
             {
                 itemObj.GetComponent<Item>().pickedUp = true;
 
+                slots[i].GetComponent<Slot>().tex = tex;
                 slots[i].GetComponent<Slot>().item = itemObj;
                 slots[i].GetComponent<Slot>().icon = itemIcon;
-
+                slots[i].GetComponent<Image>().sprite = itemIcon;
                 itemObj.transform.parent = slots[i].transform;
                 itemObj.SetActive(false);
 
                 slots[i].GetComponent<Slot>().empty = false;
+                break;
             }
         }
 

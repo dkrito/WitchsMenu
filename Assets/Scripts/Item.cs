@@ -18,15 +18,20 @@ public enum ItemName
     EnlargePotion,
     CrowTear,
     Key,
-    Spider
+    Spider,
+    None
 }
 
 public class Item : MonoBehaviour
 {
     [SerializeField] protected ItemName itemName;
     
-    public Texture2D icon;
-
+    public Sprite icon;
+    public Texture2D tex;
     public bool pickedUp;
 
+    public ItemName GetItemName()
+    {
+        return itemName;
+    }
 }

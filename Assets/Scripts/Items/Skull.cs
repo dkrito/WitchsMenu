@@ -6,9 +6,8 @@ public class Skull : Item, ICollectible
 {
     public void Collect()
     {
-        print("collectign");
+        GameManager.Instance.AddToInventory(gameObject, icon, tex);
         gameObject.SetActive(false);
-        //GameManager.Instance.AddToInventory(this);
     }
 
     public ItemName GetItemName()

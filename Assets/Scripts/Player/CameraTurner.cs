@@ -56,9 +56,7 @@ public class CameraTurner : MonoBehaviour
         transform.rotation = transform.parent.rotation;
         InteractionBroker.NotifyCameraMovement(true);
         canMoveCamera = true;
-        //Cursor.lockState = CursorLockMode.Confined;
-        //Cursor.visible = false;
-
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
         InteractionBroker.TogglePannerHandle(true);
         print("returning");
     }

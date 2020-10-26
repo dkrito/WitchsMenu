@@ -7,28 +7,23 @@ public class Recipe
 {
 
     [SerializeField] private ItemName[] itemsRequired;
-    public bool HaveAllIngredients(List<ICollectible> itemList)
+    public bool HaveAllIngredients(List<ItemName> itemList)
     {
-        if (itemList.Count < itemsRequired.Length) return false;
-
+        if (itemList.Count == 3) return true;
         for(int i = 0; i < itemsRequired.Length; ++i)
         {
             bool cleared = false;
-            for(int j = 0; j < itemList.Count; ++j)
+            for (int j = 0; j < itemList.Count; ++j)
             {
-                if (itemsRequired[i] == itemList[j].GetItemName())
+                if (itemsRequired[i] == itemList[j])
                 {
                     cleared = true;
                     break;
                 }
 
-                
+                if (cleared == false) return false;
             }
-
-            if (cleared == false) return false;
-
         }
-
 
         return true;
     }

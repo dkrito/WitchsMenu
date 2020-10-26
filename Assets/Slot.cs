@@ -6,5 +6,6 @@ public class Slot : MonoBehaviour
 {
     public GameObject item; 
     public bool empty;
-    public Texture2D icon;
+    public Sprite icon;
+    public Texture2D tex;
 }
