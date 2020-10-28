@@ -34,5 +34,5 @@ Sounds
 1. Scary Ambient Music (The Sick House) by TheBoseDeity. We cut the sound to be shorter
 2. Whoosh.wav by _bepis. We cut the sound to be shorter and adjusted the volume
 3. Scattered sounds (layer these?) » Running on ground by Disagree: https://freesound.org/people/Disagree/sounds/433725/. Used the first couple of seconds and adjusted volume.
-4. Kid scream Audioversum Innsbruck 03.wav by LG: https://freesound.org/people/LG/sounds/393918/. Used the last 2 seconds and adjusted voluem.
+4. Kid scream Audioversum Innsbruck 03.wav by LG: https://freesound.org/people/LG/sounds/393918/. Used the last 2 seconds and adjusted volume.
 5. Great Britain » Door slam by arnaud coutancier: https://freesound.org/people/arnaud%20coutancier/sounds/436191/. Used the first 2 seconds and adjusted volume.
