@@ -9,20 +9,11 @@ public class Recipe
     [SerializeField] private ItemName[] itemsRequired;
     public bool HaveAllIngredients(List<ItemName> itemList)
     {
-        if (itemList.Count == 3) return true;
+        if (itemsRequired.Length != itemList.Count) return false;
         for(int i = 0; i < itemsRequired.Length; ++i)
         {
-            bool cleared = false;
-            for (int j = 0; j < itemList.Count; ++j)
-            {
-                if (itemsRequired[i] == itemList[j])
-                {
-                    cleared = true;
-                    break;
-                }
+            if (itemList.Contains(itemsRequired[i]) == false) return false;
 
-                if (cleared == false) return false;
-            }
         }
 
         return true;

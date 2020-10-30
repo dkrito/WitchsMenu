@@ -20,7 +20,16 @@ public class Pot : Item, IInteractable, IChangeable
         if (name == ItemName.SleepPotion) return false;
         if (name == ItemName.Spider) return false;
 
+        if(itemNames.Contains(name))
+        {
+            return false;
+        }
         itemNames.Add(name);
+        print(recipe.HaveAllIngredients(itemNames));
+        foreach(ItemName i in itemNames)
+        {
+            print(i);
+        }
         if (recipe.HaveAllIngredients(itemNames))
         {
             if (potion) potion.SetActive(true);
